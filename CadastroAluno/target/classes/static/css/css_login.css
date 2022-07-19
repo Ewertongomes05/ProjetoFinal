@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,700');
+ 
+
+/* Inicio CSS da Pagina LOGIN*/ 
+body {
+    font:1em/1 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #55108d, #a2a7b1);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vh;
+    font-size: 15px;
+  }
+  
+  h2{
+      font-size: 40px !important;
+      text-align: center !important;
+      justify-content: center !important;
+      font-family: "Montserrat" !important;
+      font-weight: bold !important;
+      font-style: normal !important;
+      line-height: 82px !important;
+      color: white !important;
+  
+  }
+
+  
+  
+  /*DIV container - caixa branca */
+  #login .container 
+  #login-row 
+  #login-column 
+  #login-box {
+    margin:  auto;
+    margin-top: 50px;
+    max-width: 460px;
+    min-height: 50vh;
+    border-radius: 15px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.918);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  
+  }
+
+  
+  .pesquisar{
+    justify-content: top;
+    align-items: left;
+    position: relative;
+    text-decoration: none;
+    border: none;
+}
+  
+  /*Texto Login e Senha*/
+  label {
+      color: #005062;
+      font-family: "Montserrat" !important;
+      font-size: 17px !important;
+      font-weight: bold !important;
+  
+  }
+  
+  /*Caixa de Login e Senha*/
+  .form-control{
+    padding: 0.5em;
+      border:  2px solid #005062;
+      box-sizing: border-box;
+      border-radius: 7px;
+      background: #E1E1E1;
+      display: block;
+      height: 33px;
+      padding-left: 10px;
+      width: 260px;
+     
+  }
+  
+  .form-check-input{
+      top: 2px !important;
+  }
+  
+  .form-check-label{
+      font-size: 11px !important;
+  }
+  
+  .btn{
+      background-color: #002730;
+  }
+  
+  /*Posição do Login e Senha dentro da Div*/
+  #login .container 
+  #login-row 
+  #login-column 
+  #login-box 
+  #login-form {
+    padding: 100px;
+  
+  }
+  
+  /*Espaço entre o botão do Input entrar e os campos  */
+  .d-grid{
+      margin-top: 20px;
+      border-radius: 50px;
+  }
+  
+  /*Input Entrar*/
+  .btn-primary{
+      background: linear-gradient(to left, #004912, #00d358);
+      cursor: pointer;
+      color: white;
+      font-size: 1rem;
+      font-weight: 400;
+      height: 30px;
+      width: 258px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      border-color: #005062;
+  
+  }
+  
+  /* Efeito de do Input Entrar */
+  .btn-primary:hover{
+      letter-spacing: 0px;
+      background: linear-gradient(to right, #004912, #00d358);
+  }
+  
+  /* Box de Alerta */
+  .alert {
+    position: absolute;
+    left:50%;
+    margin-left: -260px;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    width: 500px;
+    opacity: 1;
+    transition: opacity 0.5s;
+    margin-bottom: 15px;
+  }
+  
+  .alert.success {background-color: #04AA6D;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #ce3f2c;}
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  .errorresp{
+    margin-left: 15px;
+  }
+  
+  footer{
+    margin-top: 7.5vh;
+    min-width: 40vh;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer p{
+    font-family: Montserrat;
+    color: #c0c0c0;
+    font-size: 0.9rem;
+  }
+
+
+  .logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+  .titulo{
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 82px;
+/* identical to box height */
+    color: #FFFFFF;
+}
+
+/* FIM CSS da Pagina LOGIN*/ 
+

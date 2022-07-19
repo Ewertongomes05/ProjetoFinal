@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+    background: linear-gradient(45deg, #55108d, #a2a7b1);
+    background-repeat: no-repeat;
+    font-family: Poppins;
+}
+
+#header{
+    text-align: left;
+    font-size:15px;
+}
+
+td{
+   font-size: 10px;
+}
+
+.container-relatorio{
+    position: relative;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0  auto;
+    margin-top: 2vh;
+    max-width: 200vhx;
+    min-height: 40vh;
+    border-radius: 20px;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table{
+    display: table;
+    border-collapse: separate;
+    width: 100%;
+}
+
+.btn-imprimir{
+    position: absolute;
+}
+
+.imprimir{
+    margin-top: 83vh;
+    margin-left: 80vh;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    background-color:#30b40f;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: "Montserrat";
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imprimir:hover{
+    background-color:#ffffff;
+    letter-spacing: 0px;
+    color: #000000;
+}
+
+@media print {
+    #imprimir { display:none; }
+}
+
+
+
+
+
+
+.img-download{
+    text-align: center ;
+    align-items: center ;
+}
+
+.notdisplay{
+    display: none;
+}
+
+.img-download a{
+    width: 25vh;
+    height: 40px;
+    background-color:#1ac415;
+    border: 1px;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: Montserrat;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.img-download a:hover{
+    background-color:#ffffff;
+    letter-spacing: 0px;
+    color: #000000;
+}
+
+.img-download img{
+    height: 25px;
+    margin-left: 5px;
+}
+

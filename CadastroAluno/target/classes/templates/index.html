@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <title>Listando Alunos</title>
+
+
+  <!--INICIO - CSS e JS-->
+  <link href="css/css_index.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <script src="https://kit.fontawesome.com/fd4732aa70.js" crossorigin="anonymous"></script>
+  <!-- FIM - CSS e JS-->
+
+</head>
+
+<body>
+
+<!--header do site-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/" style="color: #005062">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/Cadastrar"  style="color: #005062">Cadastrar</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href=""  id="btn-relatorio" style="color: #005062">Relatório</a>
+              <!--  <a href="" id="btn-relatorio">Gerar Relatório <img src="img/pdf.png" alt=""></a>-->
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link disabled" href="/logout" style="color: #005062">Sair</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+
+<div class="logo">
+  <div class="pesquisar">
+    <svg class="svg_pesquisar" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M39.9082 5.107C36.5022 1.702 32.0402 0 27.5782 0C23.1152 0 18.6532 1.702 15.2482 5.107C9.51118 10.844 8.62718 19.576 12.5572 26.259L1.34019 35.682C-0.350814 37.102 -0.455814 39.521 1.10619 41.082L3.93419 43.91C5.49619 45.472 7.91419 45.367 9.33519 43.676L18.7582 32.459C21.4752 34.057 24.5222 34.874 27.5782 34.874C32.0402 34.874 36.5032 33.172 39.9082 29.768C46.7182 22.957 46.7182 11.916 39.9082 5.107ZM34.2502 24.111C32.4682 25.894 30.0992 26.875 27.5772 26.875C25.0562 26.875 22.6862 25.893 20.9042 24.111C17.2242 20.431 17.2242 14.444 20.9042 10.764C22.6872 8.982 25.0572 8 27.5782 8C30.0992 8 32.4702 8.982 34.2512 10.764C37.9312 14.444 37.9312 20.431 34.2502 24.111Z" fill="white"/>
+    </svg>
+    <input id="buscar" class="caixa" type="text" placeholder="Pesquisar">
+  </div>
+  <h2 class="titulo">Listagem de Alunos</h2>
+
+
+</div>
+<!--fim header do site-->
+
+<!--caixa de listagem-->
+<div class="box-lista">
+  <table id="tabela" class="table">
+    <thead>
+    <tr>
+      <th class="box-header">Matricula</th>
+      <th class="box-header">Nome</th>
+      <th class="box-header">Curso</th>
+      <th class="box-header">Tipo</th>
+      <th class="box-header"></th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+
+    <tr th:each="alunos,i:${alunos}" id="tr">
+      <input type="hidden" th:value="${alunos.matricula}" th:id="'alunos-matricula' + ${i.index}">
+      <input type="hidden" th:value="${alunos.nome}" th:id="'alunos-nome' + ${i.index}">
+      <input type="hidden" th:value="${alunos.curso.nome}" th:id="'alunos-curso-nome' + ${i.index}">
+      <input type="hidden" th:value="${alunos.tipo.tipo}" th:id="'alunos-tipo-nome' + ${i.index}">
+      <input type="hidden" th:value="${alunos.sexo}" th:id="'alunos-sexo' + ${i.index}">
+      <input type="hidden" th:value="${alunos.data_nasc}" th:id="'alunos-nascimento' + ${i.index}">
+      <input type="hidden" th:value="${alunos.cpf}" th:id="'alunos-cpf' + ${i.index}">
+      <input type="hidden" th:value="${alunos.email}" th:id="'alunos-email' + ${i.index}">
+      <input type="hidden" th:value="${alunos.endereco.cep}" th:id="'alunos-cep' + ${i.index}">
+      <input type="hidden" th:value="${alunos.endereco.uf}" th:id="'alunos-uf' + ${i.index}">
+      <input type="hidden" th:value="${alunos.endereco.cidade}" th:id="'alunos-cidade' + ${i.index}">
+      <input type="hidden" th:value="${alunos.endereco.bairro}" th:id="'alunos-bairro' + ${i.index}">
+      <input type="hidden" th:value="${alunos.endereco.rua}" th:id="'alunos-rua' + ${i.index}">
+      <input type="hidden" th:value="${alunos.endereco.numero}" th:id="'alunos-numero' + ${i.index}">
+      <input type="hidden" th:value="${alunos.endereco.complemento}" th:id="'alunos-complemento' + ${i.index}">
+
+      <td th:text="${alunos.matricula}" class="ul_class"></td>
+      <td th:text="${alunos.nome}" class="ul_class"></td>
+      <td th:text="${alunos.curso.nome}" class="ul_class"></td>
+      <td th:text="${alunos.tipo.tipo}" class="ul_class"></td>
+      <td>
+        <a th:href="@{/editar/{matricula}(matricula=${alunos.matricula})}" class="editar1" onclick="">Editar</a>
+        <a th:href="@{/remove/{matricula}(matricula=${alunos.matricula})}" class="excluir1" onclick="">Remover</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  
+  
+</div>
+<!-- 
+<div class="img-download">
+  <a href="" id="btn-relatorio">Gerar Relatório <img src="img/pdf.png" alt=""></a>
+</div>
+ -->
+ 
+<script type="text/javascript" th:src="@{js/js_main.js}"></script>
+
+
+
+
+
+
+<!-- Relatorio para impressão -->
+<script>
+var tabelas = document.querySelectorAll('#tr');
+console.log(tabelas.length);
+
+var aluno1 = [];
+
+for(let i = 0; i < tabelas.length; i++){
+
+  var aluno2 = {};
+  
+  
+  aluno2.matricula = document.getElementById('alunos-matricula' + i).value;
+  
+  aluno2.nome = document.getElementById('alunos-nome' + i).value;
+  aluno2.cursoNome = document.getElementById('alunos-curso-nome' + i).value;
+  aluno2.tipoTipo = document.getElementById('alunos-tipo-nome' + i).value;
+  aluno2.sexo = document.getElementById('alunos-sexo' + i).value;
+  aluno2.data_nasc = document.getElementById('alunos-nascimento' + i).value;
+  aluno2.cpf = document.getElementById('alunos-cpf' + i).value;
+  aluno2.email = document.getElementById('alunos-email' + i).value;
+  aluno2.cep = document.getElementById('alunos-cep' + i).value;
+  aluno2.uf = document.getElementById('alunos-uf' + i).value;
+  aluno2.cidade = document.getElementById('alunos-cidade' + i).value;
+  aluno2.bairro = document.getElementById('alunos-bairro' + i).value;
+  aluno2.rua = document.getElementById('alunos-rua' + i).value;
+  aluno2.numero = document.getElementById('alunos-numero' + i).value;
+  aluno2.complemento = document.getElementById('alunos-complemento' + i).value;
+
+  aluno1.push(aluno2);
+  
+  
+}
+
+var btn = document.getElementById('btn-relatorio');
+
+function printreport(event){
+
+    event.preventDefault();
+
+    var input = document.getElementById('buscar').value;
+    var filter;
+
+    if(input){
+
+        filter = aluno1.filter(it => it.nome.toLowerCase().includes(input.toLowerCase()) || it.matricula.toLowerCase().includes(input.toLowerCase()) || it.cursoNome.toLowerCase().includes(input.toLowerCase()));
+
+
+    }else {
+
+        filter = aluno1;
+
+    }
+
+    let printContents = '';
+    const WindowObject = window.open('', 'PrintWindow','width=1300,height=960,top=50,left=30,toolbars=no,scrollbars=yes,status=no,resizable=yes');
+    printContents += `<table class="table">
+                       <tr id="header">
+                       <th>Matric.</th>
+                       <th>Nome</th>
+                       <th>Sexo</th>
+                       <th>Nasc.</th>
+                       <th>CPF</th>
+                       <th>E-mail</th>
+                       <th>Curso</th>
+                       <th>Tipo de Curso</th>
+                       <th>CEP</th>
+                       <th>UF</th>
+                       <th>Cidade</th>
+                       <th>Bairro</th>
+                       <th>Rua</th>
+                       <th>N°</th>
+                       <th>Comp.</th>
+                     </tr>`;
+    filter.map(aluno2 => {
+      printContents += `<tr>
+                       <td>${aluno2.matricula}</td>
+                       <td>${aluno2.nome}</td>
+                       <td>${aluno2.sexo}</td>
+                       <td>${aluno2.data_nasc}</td>
+                       <td>${aluno2.cpf}</td>
+                       <td>${aluno2.email}</td>
+                       <td>${aluno2.cursoNome}</td>
+                       <td>${aluno2.tipoTipo}</td>
+                       <td>${aluno2.cep}</td>
+                       <td>${aluno2.uf}</td>
+                       <td>${aluno2.cidade}</td>
+                       <td>${aluno2.bairro}</td>
+                       <td>${aluno2.rua}</td>
+                       <td>${aluno2.numero}</td>
+                       <td>${aluno2.complemento}</td>
+                     </tr>`;
+    })
+
+  const htmlData = `
+  <html>
+    <head>
+    	<title>Relatorio</title>
+    	<link rel="stylesheet" type="text/css" href="css/css_print.css">
+    	</head>
+    		<body>
+    			<div class="container-relatorio">${printContents}</div>
+    			<div class="btn-imprimir"><a class="imprimir" id="imprimir" href="#" onclick="javascript: window.print();return false;">Imprimir 
+    			</a>
+    						
+    			
+    			
+    			</div>
+    		</body>
+    </html>
+    `;
+
+      WindowObject.document.writeln(htmlData);
+      WindowObject.focus();
+}
+
+btn.addEventListener('click',printreport);
+
+</script>
+</body>
+
+</html>

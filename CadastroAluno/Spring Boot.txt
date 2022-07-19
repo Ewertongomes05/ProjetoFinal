@@ -1,0 +1,21 @@
+Spring Boot
+
+MySQL Driver SQL
+MySQL JDBC and R2DBC driver.
+
+--------
+Spring Data JPA SQL
+Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+
+--------
+Spring Web WEB
+Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+
+--------
+Thymeleaf TEMPLATE ENGINES
+A modern server-side Java template engine for both web and standalone environments. Allows HTML to be correctly displayed in browsers and as static prototypes.
+
+--------
+Spring Security SECURITY
+Highly customizable authentication and access-control framework for Spring applications.
+
